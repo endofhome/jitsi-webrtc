@@ -22,7 +22,7 @@
 // audio unit. Hence, we will not hit a RTC_CHECK in
 // VerifyAudioParametersForActiveAudioSession() for a mismatch between the
 // preferred number of channels and the actual number of channels.
-const int kRTCAudioSessionPreferredNumberOfChannels = 1;
+const int kRTCAudioSessionPreferredNumberOfChannels = 2;
 
 // Preferred hardware sample rate (unit is in Hertz). The client sample rate
 // will be set to this value as well to avoid resampling the the audio unit's
@@ -73,7 +73,7 @@ static RTC_OBJC_TYPE(RTCAudioSessionConfiguration) *gWebRTCConfiguration = nil;
     _categoryOptions = AVAudioSessionCategoryOptionAllowBluetooth;
 
     // Specify mode for two-way voice communication (e.g. VoIP).
-    _mode = AVAudioSessionModeVoiceChat;
+    _mode = AVAudioSessionModeDefault;
 
     // Set the session's sample rate or the hardware sample rate.
     // It is essential that we use the same sample rate as stream format
